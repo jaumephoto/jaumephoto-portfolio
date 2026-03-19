@@ -1,0 +1,75 @@
+/* 
+ * Content-Agnostic Masonry Gallery System
+ * Uses CSS Multi-column layout for dynamic Pinterest-style grid
+ * Images maintain original aspect ratio without cropping
+ * Responsive design with clear breakpoints
+ */
+
+.gallery-grid {
+  column-gap: 1.5rem; /* Constant gap between columns */
+  width: 100%;
+}
+
+/* Mobile: 1 column */
+@media (max-width: 767px) {
+  .gallery-grid {
+    column-count: 1;
+  }
+}
+
+/* Tablet: 2 columns */
+@media (min-width: 768px) and (max-width: 1023px) {
+  .gallery-grid {
+    column-count: 2;
+  }
+}
+
+/* Desktop: 3 columns */
+@media (min-width: 1024px) {
+  .gallery-grid {
+    column-count: 3;
+  }
+}
+
+.gallery-item {
+  display: inline-block;
+  width: 100%;
+  margin-bottom: 1.5rem; /* Constant gap between rows */
+  break-inside: avoid; /* Prevent items from breaking across columns */
+  -webkit-column-break-inside: avoid; /* Safari */
+  page-break-inside: avoid; /* Old browsers */
+  position: relative;
+  overflow: hidden;
+  border-radius: 0.25rem;
+  cursor: pointer;
+  background-color: #f3f4f6; /* Fallback color while loading */
+}
+
+.gallery-image {
+  width: 100%;
+  height: auto; /* Maintains original aspect ratio */
+  display: block;
+  transition: opacity 0.3s ease, transform 0.3s ease;
+  user-select: none;
+  -webkit-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  pointer-events: auto; /* Allow clicks for event delegation */
+}
+
+.gallery-item:hover .gallery-image {
+  opacity: 0.9;
+  transform: scale(1.02);
+}
+
+/* Protection against image saving */
+.gallery-grid,
+.gallery-item,
+.gallery-image {
+  -webkit-touch-callout: none;
+  -webkit-user-select: none;
+  -khtml-user-select: none;
+  -moz-user-select: none;
+  -ms-user-select: none;
+  user-select: none;
+}

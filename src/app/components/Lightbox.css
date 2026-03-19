@@ -1,0 +1,30 @@
+/* Simple expand animation from center */
+@keyframes expandFromCenter {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Fade in animation for overlay */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+/* Apply animations */
+.fixed.z-50 {
+  animation: fadeIn 0.2s ease-out;
+}
+
+.lightbox-image {
+  animation: expandFromCenter 0.3s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
