@@ -9,6 +9,7 @@ const images = [
   "https://images.unsplash.com/photo-1669181339677-0f646762be03?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxzaW5nZXIlMjBtaWNyb3Bob25lJTIwdmVydGljYWwlMjBwb3J0cmFpdHxlbnwxfHx8fDE3NzM4NTQxMTV8MA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
   "https://images.unsplash.com/photo-1769755014186-471bb4d6a8be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkcnVtcyUyMGRydW1tZXIlMjBjb25jZXJ0JTIwcGVyZm9ybWFuY2V8ZW58MXx8fHwxNzczODU0MTE1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
   "/jaumephoto-portfolio/Concerts/20230818_210439.jpg",
+  "/jaumephoto-portfolio/Concerts/3ad6cee35715d5136472d75fe5d43499.jpg",
 ];
 
 export function Concerts() {
