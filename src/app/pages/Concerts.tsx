@@ -10,6 +10,7 @@ const images = [
   "https://images.unsplash.com/photo-1769755014186-471bb4d6a8be?crop=entropy&cs=tinysrgb&fit=max&fm=jpg&ixid=M3w3Nzg4Nzd8MHwxfHNlYXJjaHwxfHxkcnVtcyUyMGRydW1tZXIlMjBjb25jZXJ0JTIwcGVyZm9ybWFuY2V8ZW58MXx8fHwxNzczODU0MTE1fDA&ixlib=rb-4.1.0&q=80&w=1080&utm_source=figma&utm_medium=referral",
   "/jaumephoto-portfolio/Concerts/20230818_210439.jpg",
   "/jaumephoto-portfolio/Concerts/3ad6cee35715d5136472d75fe5d43499.jpg",
+  "/jaumephoto-portfolio/Concerts/0c9b9bf1d598e0e381427169bb1ce76e.jpg",
 ];
 
 export function Concerts() {
