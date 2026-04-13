@@ -1,8 +1,6 @@
 import { GalleryGrid } from "../components/GalleryGrid";
 
-const images = [
-
-];
+const images = [];
 
 export function Concerts() {
   return (
