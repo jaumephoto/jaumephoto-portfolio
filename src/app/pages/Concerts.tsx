@@ -1,6 +1,8 @@
 import { GalleryGrid } from "../components/GalleryGrid";
 
-const images = [];
+const images = [
+  "/jaumephoto-portfolio/Concerts/goat.jpg",
+];
 
 export function Concerts() {
   return (
