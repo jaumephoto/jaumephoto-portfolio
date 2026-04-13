@@ -11,6 +11,7 @@ const images = [
   "/jaumephoto-portfolio/Concerts/20230818_210439.jpg",
   "/jaumephoto-portfolio/Concerts/3ad6cee35715d5136472d75fe5d43499.jpg",
   "/jaumephoto-portfolio/Concerts/0c9b9bf1d598e0e381427169bb1ce76e.jpg",
+  "/jaumephoto-portfolio/Concerts/goat.jpg",
 ];
 
 export function Concerts() {
