@@ -2,7 +2,9 @@ import { GalleryGrid } from "../components/GalleryGrid";
 
 import streetimage1 from "../assets/images/street/miau.png";
 
-const images = [];
+const images = [
+  "/jaumephoto-portfolio/StreetPhotography/IMG_2574.jpg",
+];
 
 export function StreetPhotography() {
   return (
