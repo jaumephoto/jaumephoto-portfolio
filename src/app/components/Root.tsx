@@ -109,7 +109,9 @@ export function Root() {
       <footer className="border-t border-gray-200 py-8">
         <div className="px-6 flex justify-center gap-6">
           <a 
-            href="mailto:jaumem.jbs@gmail.com" 
+            href="https://mail.google.com/mail/?view=cm&fs=1&to=jaumem.jbs@gmail.com" 
+            target="_blank" 
+            rel="noopener noreferrer"
             className="flex items-center gap-2 text-gray-600 hover:text-black transition-colors"
           >
             <Mail className="w-5 h-5" />
