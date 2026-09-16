@@ -19,18 +19,28 @@ export function About() {
           
           <div className="space-y-4 text-gray-700 mb-8">
             <p>
-              I'm a visual storyteller passionate about capturing authentic moments that tell compelling stories. 
-              My work spans across street photography, live concerts, weddings, and intimate portrait sessions.
+              With my photos I want to capture true stories, any kind, joyful, tragic, encouraging,
+              pessimistic, curious, extravagant, loveful, some obvious, some hidden inside an iris, a
+              hand or a certain kind of stare. I believe I came to this world with this irresistible
+              curiosity inside of me, this need of making moments matter, this ability of seeing the
+              most relevant and unordinary events in the most unexpected places. I do not want to take
+              pictures that leave their witness indifferent, something must move, a comment, a feeling,
+              a thought, a laugh, rage or maybe nostalgia. To me it's people that evoke all of these
+              feelings.
             </p>
             <p>
-              With over a decade of experience behind the lens, I've developed a keen eye for finding beauty 
-              in both the extraordinary and the everyday. Each photograph is an opportunity to freeze time 
-              and preserve emotion.
+              We live in a world that often judges people at first glance, without much empathy or
+              understanding. That's why it matters to me that a single glance at my pictures can tell
+              enough of someone's story to spark the respect and empathy needed for people to perceive
+              each other with kindness.
             </p>
             <p>
-              My goal is to create images that resonate with genuine human connection, whether it's the raw 
-              energy of a street scene, the electric atmosphere of a live performance, the joy of a wedding 
-              celebration, or the vulnerability of a portrait session.
+              This idea may affect people differently, but it's important that we all recognize it:
+              beside us on every street, in every flat, across that field, beyond that sea, above our
+              heads or below the ground we stand on, there are people living their own individual
+              lives with their own problems, feelings, interests, and goals. I believe this simple
+              almost unbelievable idea, if truly considered, can change the world, moving it toward
+              more respect and less rage.
             </p>
           </div>
 
