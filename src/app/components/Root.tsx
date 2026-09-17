@@ -67,7 +67,15 @@ export function Root() {
                 `transition-colors whitespace-nowrap ${isActive ? 'text-black' : 'text-gray-400 hover:text-gray-600'}`
               }
             >
-              Weddings & Events
+              Events
+            </NavLink>
+            <NavLink 
+              to="/photojournalism"
+              className={({ isActive }) => 
+                `transition-colors whitespace-nowrap ${isActive ? 'text-black' : 'text-gray-400 hover:text-gray-600'}`
+              }
+            >
+              Photojournalism
             </NavLink>
             <NavLink 
               to="/portrait-project"
