@@ -44,6 +44,12 @@ if (!fs.existsSync(ORIGEN)) parar(`No encuentro la carpeta ${ORIGEN}`);
 if (git(["rev-parse", "--git-dir"]).status !== 0)
   parar("Este script tiene que estar dentro de la carpeta del proyecto (jaumephoto-portfolio).");
 
+if (!SIN_PUSH) {
+  console.log("⬇️  Descargando últimos cambios de GitHub...");
+  const pull = git(["pull", "--rebase", "--autostash"], { stdio: "inherit", encoding: undefined });
+  if (pull.status !== 0) parar("No he podido actualizar desde GitHub. Copia este mensaje y pásaselo a Claude.");
+}
+
 // Evita subir por error carpetas enormes (node_modules, dist)
 const rutaIgnore = path.join(REPO, ".gitignore");
 if (!fs.existsSync(rutaIgnore)) {
@@ -81,11 +87,6 @@ async function crearMiniatura(desde, hacia) {
   await img.toFile(hacia);
 }
 
-if (!SIN_PUSH) {
-  console.log("⬇️  Descargando últimos cambios de GitHub...");
-  const pull = git(["pull", "--rebase"], { stdio: "inherit", encoding: undefined });
-  if (pull.status !== 0) parar("No he podido actualizar desde GitHub. Copia este mensaje y pásaselo a Claude.");
-}
 
 // Fotos que están en la web pero ya no están en tu carpeta local (borradas o movidas de sección)
 const sobran = [];
@@ -176,7 +177,21 @@ for (const [carpeta, pagina] of Object.entries(SECCIONES)) {
 console.log("\n📋 Resumen");
 resumen.forEach((l) => console.log("  " + l));
 
+function subir() {
+  console.log("\n⬆️  Subiendo a GitHub (con fotos grandes puede tardar un rato, no cierres la ventana)...");
+  const push = git(["push"], { stdio: "inherit", encoding: undefined });
+  if (push.status !== 0) parar("No he podido subir a GitHub. Copia el mensaje de arriba y pásaselo a Claude.");
+  console.log("\n🎉 Subido. En 1-2 minutos estará en https://jaumephoto.github.io/jaumephoto-portfolio/");
+  process.exit(0);
+}
+
 if (git(["status", "--porcelain"]).stdout.trim() === "") {
+  // Sin cambios nuevos, pero puede haber cambios ya guardados que no se subieron
+  const pendientes = parseInt(git(["rev-list", "--count", "@{u}..HEAD"]).stdout.trim() || "0", 10);
+  if (pendientes > 0 && !SIN_PUSH) {
+    console.log(`\nHay ${pendientes} cambio(s) guardados que aún no están en GitHub.`);
+    subir();
+  }
   console.log("\n✅ No hay nada nuevo que subir.");
   process.exit(0);
 }
@@ -190,7 +205,4 @@ const fecha = new Date().toISOString().slice(0, 16).replace("T", " ");
 git(["add", "-A"], { stdio: "inherit", encoding: undefined });
 const commit = git(["commit", "-m", `Nuevas fotos ${fecha}`], { stdio: "inherit", encoding: undefined });
 if (commit.status !== 0) parar("No he podido hacer el commit.");
-const push = git(["push"], { stdio: "inherit", encoding: undefined });
-if (push.status !== 0) parar("No he podido subir a GitHub. Copia este mensaje y pásaselo a Claude.");
-
-console.log("\n🎉 Subido. En 1-2 minutos estará en https://jaumephoto.github.io/jaumephoto-portfolio/");
+subir();
