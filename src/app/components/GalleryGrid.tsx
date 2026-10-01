@@ -6,6 +6,12 @@ interface GalleryGridProps {
   images: string[];
 }
 
+// La miniatura vive en la subcarpeta "thumbs" junto a la foto grande
+function thumbUrl(src: string) {
+  const i = src.lastIndexOf("/");
+  return i === -1 ? src : `${src.slice(0, i)}/thumbs/${src.slice(i + 1)}`;
+}
+
 export function GalleryGrid({ images }: GalleryGridProps) {
   const [selectedImage, setSelectedImage] = useState<string | null>(null);
   const galleryRef = useRef<HTMLDivElement>(null);
@@ -20,7 +26,8 @@ export function GalleryGrid({ images }: GalleryGridProps) {
       
       // Check if clicked element is an image
       if (target.tagName === 'IMG') {
-        const imageSrc = target.getAttribute('src');
+        // La galería muestra la miniatura; el lightbox abre la foto grande
+        const imageSrc = target.getAttribute('data-full') || target.getAttribute('src');
         if (imageSrc) {
           setSelectedImage(imageSrc);
         }
@@ -57,7 +64,14 @@ export function GalleryGrid({ images }: GalleryGridProps) {
           {images.map((image, index) => (
             <div key={index} className="gallery-item">
               <img
-                src={image}
+                src={thumbUrl(image)}
+                data-full={image}
+                onError={(e) => {
+                  // Si aún no existe la miniatura, usa la foto grande
+                  if (e.currentTarget.getAttribute("src") !== image) {
+                    e.currentTarget.setAttribute("src", image);
+                  }
+                }}
                 alt={`Gallery image ${index + 1}`}
                 className="gallery-image"
                 draggable={false}
