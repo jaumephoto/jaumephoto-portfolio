@@ -15,6 +15,7 @@ const images = [
   "/jaumephoto-portfolio/StreetPhotography/musicos_betanzos.jpg",
   "/jaumephoto-portfolio/StreetPhotography/pasos_de_princesa.jpg",
   "/jaumephoto-portfolio/StreetPhotography/protestas_octubre_bcn.jpg",
+  "/jaumephoto-portfolio/StreetPhotography/vigilante.jpg",
 ];
 
 export function StreetPhotography() {
