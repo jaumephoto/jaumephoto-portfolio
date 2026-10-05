@@ -4,6 +4,7 @@ import streetimage1 from "../assets/images/street/miau.png";
 
 const images = [
   "/jaumephoto-portfolio/StreetPhotography/abrazo_con_historia.jpg",
+  "/jaumephoto-portfolio/StreetPhotography/Betanzos_festa-1-8.jpg",
   "/jaumephoto-portfolio/StreetPhotography/cabezones.jpg",
   "/jaumephoto-portfolio/StreetPhotography/cachorro_de_calle.jpg",
   "/jaumephoto-portfolio/StreetPhotography/carrusel.jpg",
