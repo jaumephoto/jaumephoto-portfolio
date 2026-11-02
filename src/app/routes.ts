@@ -20,6 +20,4 @@ export const router = createBrowserRouter([
       { path: "about", Component: About },
     ],
   },
-], {
-  basename: "/jaumephoto-portfolio"
-});
+]);

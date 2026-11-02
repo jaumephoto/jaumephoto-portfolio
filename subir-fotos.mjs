@@ -12,7 +12,7 @@ import { createRequire } from "node:module";
 const REPO = path.dirname(fileURLToPath(import.meta.url));
 const ORIGEN = process.env.ORIGEN || "C:\\fotos-portfolio";
 const SIN_PUSH = process.argv.includes("--sin-push");
-const BASE_URL = "/jaumephoto-portfolio";
+const BASE_URL = "";
 const EXTENSIONES = [".jpg", ".jpeg", ".png", ".webp"];
 const AVISO_MB = 1.5;
 const ANCHO_MINIATURA = 1200; // píxeles de ancho de las miniaturas de la galería

@@ -1,7 +1,7 @@
 import { GalleryGrid } from "../components/GalleryGrid";
 
 const images = [
-  "/jaumephoto-portfolio/Concerts/IMG_2574.jpg",
+  "/Concerts/IMG_2574.jpg",
 ];
 
 export function Concerts() {

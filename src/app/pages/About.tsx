@@ -7,7 +7,7 @@ export function About() {
         {/* Left Column - Image */}
         <div>
           <img
-            src="/jaumephoto-portfolio/About/self_portrait_about.jpg.jpg"
+            src="/About/self_portrait_about.jpg.jpg"
             alt="Photographer"
             className="w-full h-auto"
           />
